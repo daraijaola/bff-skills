@@ -101,9 +101,10 @@ jobs:
           # Clone the fork
           gh repo clone "${FORK_OWNER}/skills" aibtc-skills
 
-          # Add upstream for reference
+          # Ensure upstream remote points to aibtcdev/skills
           cd aibtc-skills
-          git remote add upstream https://github.com/aibtcdev/skills.git
+          git remote set-url upstream https://github.com/aibtcdev/skills.git 2>/dev/null \
+            || git remote add upstream https://github.com/aibtcdev/skills.git
           git fetch upstream main
           git checkout -B main upstream/main
 
