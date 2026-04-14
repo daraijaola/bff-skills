@@ -8,7 +8,7 @@ metadata:
   arguments: "doctor | status | loop | unwind | run"
   entry: "sbtc-leverage-looper/sbtc-leverage-looper.ts"
   requires: "wallet, signing, settings"
-  tags: "defi, write, hodlmm, zest, leverage, sbtc, mainnet-only"
+  tags: "defi, write, mainnet-only, requires-funds"
 ---
 
 ## What it does
