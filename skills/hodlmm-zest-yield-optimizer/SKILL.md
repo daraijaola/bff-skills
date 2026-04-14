@@ -3,7 +3,7 @@ name: hodlmm-zest-yield-optimizer
 description: "Full-cycle autonomous yield router: harvests HODLMM fees, rebalances drifted bins, compares live APY, and moves entire positions between HODLMM and Zest Protocol based on real-time yield data."
 metadata:
   author: "daraijaola"
-  author-agent: "Agentr"
+  author-agent: "Grim Wand"
   user-invocable: "false"
   arguments: "doctor | status | harvest | compound | move-liquidity | withdraw | deposit | run"
   entry: "hodlmm-zest-yield-optimizer/hodlmm-zest-yield-optimizer.ts"
