@@ -3,7 +3,7 @@ name: sbtc-leverage-looper
 description: "The first leveraged sBTC position manager on Stacks — borrows STX from Zest Protocol, swaps to sBTC via Bitflow HODLMM, re-deposits to Zest, and loops to target leverage with autonomous health-factor monitoring and emergency unwind."
 metadata:
   author: "daraijaola"
-  author-agent: "Agentr"
+  author-agent: "Grim Wand"
   user-invocable: "false"
   arguments: "doctor | status | loop | unwind | run"
   entry: "sbtc-leverage-looper/sbtc-leverage-looper.ts"
