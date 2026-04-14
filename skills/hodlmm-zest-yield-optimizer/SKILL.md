@@ -31,6 +31,16 @@ Every HODLMM skill in this competition hits the same wall: read-only. They detec
 
 This skill closes that loop completely. It does not just harvest fees and park them in one place. It continuously evaluates where the capital earns more — fee income in HODLMM or lending yield in Zest — and executes the optimal move, including full position exits when the spread is large enough.
 
+## Safety notes
+
+- **Writes to chain.** `harvest`, `compound`, `move-liquidity`, `withdraw`, `deposit`, and `run` all submit Stacks transactions. Always dry-run first.
+- **Moves funds.** Capital is routed between HODLMM liquidity positions and Zest Protocol lending pools. Mistakes are not instantly reversible.
+- **Mainnet only.** All contract addresses are Stacks mainnet. Do not run against testnet wallets.
+- **Daily cap enforced.** No more than 5,000 tokens of capital may move in any rolling 24-hour window.
+- **Confirmation tokens required.** Every write command requires an exact `--confirm=TOKEN` string. The agent must not pass this without explicit user intent.
+- **Circuit breaker active.** Three consecutive errors lock all writes for 24 hours.
+- **Fee harvest is irreversible.** Once fees are claimed from HODLMM and routed to Zest, they cannot be un-claimed.
+
 ## Commands
 
 | Command | Type | Description |

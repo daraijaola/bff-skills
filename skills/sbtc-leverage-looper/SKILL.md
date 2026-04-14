@@ -43,6 +43,17 @@ For an agent that believes sBTC will appreciate:
 - 2x leverage returns 20% on the same move
 - Position closes cleanly via unwind with no manual intervention
 
+## Safety notes
+
+- **Writes to chain.** `loop`, `unwind`, and `run` each submit between 1 and 3 Stacks transactions. Always dry-run first.
+- **Moves funds and takes on debt.** Each loop borrows STX from Zest and swaps it on Bitflow HODLMM. Losses are real and mainnet-only.
+- **Mainnet only.** All contracts are Stacks mainnet. Do not use with testnet wallets.
+- **Leverage amplifies losses.** A 2x leveraged position loses twice as fast as spot. HF can drop to liquidation if sBTC price falls sharply.
+- **Liquidation risk.** If health factor drops below Zest's liquidation threshold, the position will be liquidated by the protocol. The auto-unwind trigger (HF 1.65) provides a buffer but does not guarantee liquidation prevention.
+- **Confirmation tokens required.** `loop` requires `--confirm=LOOP`, `unwind` requires `--confirm=UNWIND`, `run` requires `--confirm=RUN`. No confirmation = no execution.
+- **Daily STX cap.** No more than 20,000 STX may be moved in any rolling 24-hour window.
+- **Circuit breaker active.** Three consecutive errors lock all writes for 24 hours.
+
 ## Commands
 
 | Command | Type | Description |
