@@ -34,7 +34,7 @@ Agent withdraws sBTC from Zest
 
 Every swap routes through the Bitflow HODLMM STX/sBTC pool. All positions are managed with health-factor monitoring and automatic unwind triggers.
 
-## Why agents need this
+## Why agents need it
 
 Every existing skill manages a single position in a single protocol. This skill does something qualitatively different: it uses cross-protocol coordination (Zest + Bitflow) to build up leverage in a way that no existing Stacks skill has done. The agent does not just read and report — it makes the capital work harder.
 
@@ -94,7 +94,7 @@ For an agent that believes sBTC will appreciate:
 | `MAX_ERRORS_24H` | 3 | Circuit-breaker threshold |
 | `CIRCUIT_BREAKER_HRS` | 24h | Lockout after circuit-breaker trip |
 
-## Output format
+## Output contract
 
 All commands return strict JSON:
 
