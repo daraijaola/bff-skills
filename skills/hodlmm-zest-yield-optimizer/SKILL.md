@@ -8,7 +8,7 @@ metadata:
   arguments: "doctor | status | harvest | compound | move-liquidity | withdraw | deposit | run"
   entry: "hodlmm-zest-yield-optimizer/hodlmm-zest-yield-optimizer.ts"
   requires: "wallet, signing, settings"
-  tags: "defi, write, hodlmm, zest, yield, rebalance, liquidity, mainnet-only"
+  tags: "defi, write, mainnet-only, requires-funds"
 ---
 
 ## What it does
